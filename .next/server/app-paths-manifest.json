@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/employees/page": "app/admin/employees/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/reviews/page": "app/admin/reviews/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/dashboard/stats/route": "app/api/dashboard/stats/route.js",
+  "/api/employees/route": "app/api/employees/route.js",
+  "/api/products/route": "app/api/products/route.js",
+  "/api/reviews/route": "app/api/reviews/route.js",
+  "/api/stats/route": "app/api/stats/route.js",
+  "/employees/page": "app/employees/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/feedback/employee/page": "app/feedback/employee/page.js",
+  "/feedback/product/page": "app/feedback/product/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
+}

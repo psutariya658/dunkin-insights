@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/Admin/Desktop/project/dunkin-feedback/src/components/SessionProvider.tsx"],"sourcesContent":["'use client';\n\nimport { SessionProvider as NextAuthSessionProvider } from 'next-auth/react';\nimport { ReactNode } from 'react';\n\nexport function SessionProvider({ children }: { children: ReactNode }) {\n  return (\n    <NextAuthSessionProvider>\n      {children}\n    </NextAuthSessionProvider>\n  );\n}\n"],"names":[],"mappings":";;;;AAEA;AAFA;;;AAKO,SAAS,gBAAgB,EAAE,QAAQ,EAA2B;IACnE,qBACE,8OAAC,8IAAA,CAAA,kBAAuB;kBACrB;;;;;;AAGP","debugId":null}}]
+}

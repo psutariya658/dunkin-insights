@@ -1,0 +1,18 @@
+Create a .env file in the project root with the following content:
+
+DATABASE_URL="postgresql://postgres@localhost:5432/dunkin_feedback"
+JWT_SECRET="your-secure-secret-key-change-this-in-production"
+
+After creating the .env file, run these commands:
+1. npx prisma generate
+2. npx prisma db push
+3. npm run prisma:seed
+
+Login credentials for testing:
+Admin:
+- Email: parths123@gmail.com
+- Password: admin123
+
+Customer:
+- Email: customer@example.com
+- Password: customer123

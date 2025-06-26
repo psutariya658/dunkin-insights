@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  password      String   @map("password") // Keep for backward compatibility
+  hashedPassword String?  // New field for hashed passwords
+  name          String?
+  role          Role     @default(CUSTOMER)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  reviews       Review[]
+}
+
+model Employee {
+  id        String   @id @default(cuid())
+  name      String
+  position  String
+  imageUrl  String?
+  active    Boolean  @default(true)
+  averageRating Float? @default(0)
+  reviewCount Int? @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  reviews   Review[]
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  imageUrl    String?
+  category    String
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  reviews     Review[]
+}
+
+model Review {
+  id         String    @id @default(cuid())
+  rating     Int
+  comment    String?
+  customerName String? // Optional customer name for anonymous reviews
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  userId     String
+  user       User      @relation(fields: [userId], references: [id])
+  productId  String?
+  product    Product?  @relation(fields: [productId], references: [id])
+  employeeId String?
+  employee   Employee? @relation(fields: [employeeId], references: [id])
+}
+
+enum Role {
+  ADMIN
+  CUSTOMER
+}
